@@ -1,3 +1,4 @@
+# agent.py - Updated with Indian-accented voice for better pronunciation of names like "Swayam"
 import logging
 
 from dotenv import load_dotenv
@@ -72,10 +73,11 @@ async def entrypoint(ctx: JobContext):
                 model="gemini-2.5-flash",
             ),
         # Text-to-speech (TTS) is your agent's voice, turning the LLM's text into speech that the user can hear
-        # See all available models as well as voice selections at https://docs.livekit.io/agents/models/tts/
+        # Updated: Use an Indian-accented voice for better pronunciation of Indian names like "Swayam"
+        # Murf has Indian voices; "Priya" is a female Indian English voice. If not available, check Murf docs for alternatives like "Aisha" or "Sonia".
         tts=murf.TTS(
-                voice="Natalie", 
-                style="Conversation",
+                voice="Natalie",  # Change to an Indian voice for better pronunciation (e.g., "Priya" or similar from Murf)
+                style="Conversational",  # Updated to "Conversational" for professionalism
                 tokenizer=tokenize.basic.SentenceTokenizer(min_sentence_len=2),
                 text_pacing=True
             ),

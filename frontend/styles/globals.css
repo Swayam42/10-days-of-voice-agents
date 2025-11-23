@@ -1,11 +1,16 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
-
+@font-face {
+  font-family: 'Brickson';
+  src: url('/fonts/Brickson.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 @custom-variant dark (&:is(.dark *));
-
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
+  --background: #E8C5A8;
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
@@ -39,7 +44,7 @@
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
+  --background: #282827;
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
@@ -73,13 +78,12 @@
 }
 
 @theme inline {
-  --font-sans:
-    var(--font-public-sans), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
-    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  --font-mono:
-    var(--font-commit-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-    'Liberation Mono', 'Courier New', monospace;
+  /* Fonts */
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  --font-heading: var(--font-serif);
 
+  /* Mapped Colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -98,64 +102,165 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
 }
 
 @layer base {
   * {
     @apply border-foreground/20 outline-ring/50;
   }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, .heading {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
   }
 }
 
 @layer utils {
-  .animate-text-shimmer {
-    animation-delay: 0.5s;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    animation-name: text-shimmer;
-    background: var(--muted-foreground)
-      gradient(
-        linear,
-        100% 0,
-        0 0,
-        from(var(--muted-foreground)),
-        color-stop(0.5, var(--secondary-foreground)),
-        to(var(--muted-foreground))
-      );
-    background: var(--muted-foreground) -webkit-gradient(
-        linear,
-        100% 0,
-        0 0,
-        from(var(--muted-foreground)),
-        color-stop(0.5, var(--secondary-foreground)),
-        to(var(--muted-foreground))
-      );
-    background-repeat: no-repeat;
-    background-size: 50% 200%;
-    display: inline-block;
+  .btn-primary {
+    @apply bg-primary text-primary-foreground px-6 py-3 rounded-md font-semibold 
+    transition-all hover:bg-accent hover:scale-[1.02];
   }
 
-  @keyframes text-shimmer {
-    0% {
-      background-position: -100% 0;
-    }
-    100% {
-      background-position: 250% 0;
-    }
+  .nav-link {
+    @apply text-foreground/90 font-semibold uppercase tracking-wide px-4 hover:text-primary;
   }
+
+  .card {
+    @apply bg-card shadow-md rounded-lg p-6 border border-border;
+  }
+
+  /* Shimmer */
+  .animate-text-shimmer {
+    animation: shimmer 3s infinite linear;
+    background: linear-gradient(90deg,
+        var(--muted-foreground) 0%,
+        var(--secondary-foreground) 50%,
+        var(--muted-foreground) 100%
+      );
+    background-size: 200% 100%;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+}
+
+/* Welcome Page Styles */
+.welcome-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+}
+
+.welcome-left {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: #313131;
+  padding-left: 4rem;
+}
+
+.welcome-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #E6B186;
+  background-color: rgba(255, 165, 0, 0.1);
+  border: 1px solid #E6B186;
+  border-radius: 0.375rem;
+  font-family: 'Cinzel', serif;
+}
+
+.welcome-title {
+  color: white;
+  line-height: 1;
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-family: 'Brickson',serif;
+  letter-spacing: 0.14em;
+  font-weight: lighter;
+}
+
+.welcome-subtitle {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  font-family: 'Cinzel', serif;
+}
+
+.welcome-right {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: #e6b186;
+}
+
+.welcome-logo-container {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
+
+.welcome-logo {
+  border-radius: 9999px;
+  background-color: white;
+  padding: 0.5rem;
+}
+
+.welcome-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: scale(0.5px) translateX(15px) translateY(-10px);
+  transition: transform 0.3s ease;
+}
+
+.welcome-barista {
+  margin-bottom: 0.1 rem; /* Reduce to bring closer to button */
+  margin-top: 7 rem; /* Move SVG down - increase to move more */
+  margin-top: 15 rem;
+  background: transparent;
+  transform: scale(1.6) translateX(17px) translateY(-31px);
+}
+.murf-link-embed{
+color:#ead5f4;
+font-weight:bold;
+}
+
+.welcome-button {
+  padding: 1.5rem 3rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  border-radius: 9999px;
+  background-color: white;
+  color: rgb(43, 41, 41);
+  font-family:'Cormorant Garamond', serif;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.2s;
+}
+
+.welcome-button:hover {
+  background-color: #df913d;
+}
+.welcome-button{
+  border-radius: 0.2rem;
 }

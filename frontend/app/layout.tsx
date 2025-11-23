@@ -61,6 +61,8 @@ export default async function RootLayout({ children }: RootLayoutProps) {
         {styles && <style>{styles}</style>}
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
+        <link rel="icon" href="/kruti_logo.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/kruti_logo.png" />
         <ApplyThemeScript />
       </head>
       <body className="overflow-x-hidden">

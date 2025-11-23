@@ -34,9 +34,9 @@ export const APP_CONFIG_DEFAULTS: AppConfig = {
   accent: '#6B4423',
   logoDark: '/kruti_logo.png',
   accentDark: '#8B6F47',
-  startButtonText: 'Start call',
+  startButtonText: 'Place Your Order',
 
   // for LiveKit Cloud Sandbox
   sandboxId: undefined,
-  agentName: 'Riya - Your Kruti Barista',
+  agentName: undefined,
 };

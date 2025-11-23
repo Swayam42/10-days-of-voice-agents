@@ -1,0 +1,15 @@
+{
+  "order_id": "6a58bf98",
+  "timestamp": "2025-11-23T22:23:58.319707",
+  "drinkType": "cold_coffee",
+  "size": "medium",
+  "milk": "full_cream",
+  "extras": [
+    "chocolate"
+  ],
+  "name": "Swayam",
+  "location": "bhubaneswar_pal_heights",
+  "base_price": 170,
+  "extras_price": 30,
+  "total_price": 200
+}

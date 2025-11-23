@@ -12,42 +12,42 @@ from livekit.agents import (
     cli,
     metrics,
     tokenize,
-    # function_tool,
-    # RunContext
 )
 from livekit.plugins import murf, silero, google, deepgram, noise_cancellation
 from livekit.plugins.turn_detector.multilingual import MultilingualModel
 
-logger = logging.getLogger("agent")
+# Import coffee barista components
+from prompt import SYSTEM_PROMPT
+from tools import Userdata, ALL_TOOLS
+from order_state import MENU, KRUTI_LOCATIONS
+
+logger = logging.getLogger("coffee-barista")
 
 load_dotenv(".env.local")
 
 
-class Assistant(Agent):
-    def __init__(self) -> None:
-        super().__init__(
-            instructions="""You are a helpful voice AI assistant. The user is interacting with you via voice, even if you perceive the conversation as text.
-            You eagerly assist users with their questions by providing information from your extensive knowledge.
-            Your responses are concise, to the point, and without any complex formatting or punctuation including emojis, asterisks, or other symbols.
-            You are curious, friendly, and have a sense of humor.""",
+class CoffeeBaristaAgent(Agent):
+    """Kruti Coffee Barista Agent"""
+    
+    def __init__(self, userdata: Userdata) -> None:
+        # Build menu instructions for the AI
+        drinks_list = ", ".join(MENU["drinks"].keys()).replace("_", " ")
+        milk_list = ", ".join(MENU["milk_options"]).replace("_", " ")
+        extras_list = ", ".join(MENU["extras"].keys()).replace("_", " ")
+        locations_list = ", ".join([loc.replace("_", " ").title() for loc in KRUTI_LOCATIONS])
+        
+        # Format the system prompt with menu data
+        instructions = SYSTEM_PROMPT.format(
+            drinks_list=drinks_list,
+            milk_list=milk_list,
+            extras_list=extras_list,
+            locations_list=locations_list
         )
-
-    # To add tools, use the @function_tool decorator.
-    # Here's an example that adds a simple weather tool.
-    # You also have to add `from livekit.agents import function_tool, RunContext` to the top of this file
-    # @function_tool
-    # async def lookup_weather(self, context: RunContext, location: str):
-    #     """Use this tool to look up current weather information in the given location.
-    #
-    #     If the location is not supported by the weather service, the tool will indicate this. You must tell the user the location's weather is unavailable.
-    #
-    #     Args:
-    #         location: The location to look up weather information for (e.g. city name)
-    #     """
-    #
-    #     logger.info(f"Looking up weather for {location}")
-    #
-    #     return "sunny with a temperature of 70 degrees."
+        
+        super().__init__(
+            instructions=instructions,
+            tools=ALL_TOOLS,
+        )
 
 
 def prewarm(proc: JobProcess):
@@ -74,7 +74,7 @@ async def entrypoint(ctx: JobContext):
         # Text-to-speech (TTS) is your agent's voice, turning the LLM's text into speech that the user can hear
         # See all available models as well as voice selections at https://docs.livekit.io/agents/models/tts/
         tts=murf.TTS(
-                voice="en-US-matthew", 
+                voice="Natalie", 
                 style="Conversation",
                 tokenizer=tokenize.basic.SentenceTokenizer(min_sentence_len=2),
                 text_pacing=True
@@ -121,15 +121,21 @@ async def entrypoint(ctx: JobContext):
     # # Start the avatar and wait for it to join
     # await avatar.start(session, room=ctx.room)
 
-    # Start the session, which initializes the voice pipeline and warms up the models
+    # Create userdata to hold the order state
+    userdata = Userdata()
+    
+    # Start the session with our coffee barista agent
     await session.start(
-        agent=Assistant(),
+        agent=CoffeeBaristaAgent(userdata=userdata),
         room=ctx.room,
         room_input_options=RoomInputOptions(
             # For telephony applications, use `BVCTelephony` for best results
             noise_cancellation=noise_cancellation.BVC(),
         ),
     )
+    
+    # Set userdata on the session so tools can access it
+    session.userdata = userdata
 
     # Join the room and connect to the user
     await ctx.connect()

@@ -21,21 +21,22 @@ export interface AppConfig {
 
 export const APP_CONFIG_DEFAULTS: AppConfig = {
   companyName: 'LiveKit',
-  pageTitle: 'LiveKit Voice Agent',
-  pageDescription: 'A voice agent built with LiveKit',
+  pageTitle: 'Kruti Coffee AI Barista',
+  pageDescription: 'Order your favorite Kruti Coffee using our AI Voice Barista - A natural voice ordering experience',
+
 
   supportsChatInput: true,
-  supportsVideoInput: true,
-  supportsScreenShare: true,
+  supportsVideoInput: false,
+  supportsScreenShare: false,
   isPreConnectBufferEnabled: true,
 
-  logo: '/lk-logo.svg',
-  accent: '#002cf2',
-  logoDark: '/lk-logo-dark.svg',
-  accentDark: '#1fd5f9',
+  logo: '/kruti_logo.png',
+  accent: '#6B4423',
+  logoDark: '/kruti_logo.png',
+  accentDark: '#8B6F47',
   startButtonText: 'Start call',
 
   // for LiveKit Cloud Sandbox
   sandboxId: undefined,
-  agentName: undefined,
+  agentName: 'Riya - Your Kruti Barista',
 };

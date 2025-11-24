@@ -1,6 +1,7 @@
-# agent.py (updated with logging in tool)
 import logging
 import json
+import os
+import requests
 from datetime import datetime
 from typing import List, Dict, Any
 from dotenv import load_dotenv
@@ -21,11 +22,21 @@ from livekit.agents import (
 from livekit.plugins import murf, silero, google, deepgram, noise_cancellation
 from livekit.plugins.turn_detector.multilingual import MultilingualModel
 
-from prompt import SYSTEM_PROMPT  # Import the updated system prompt
+from prompt import SYSTEM_PROMPT
 
 logger = logging.getLogger("agent")
 
 load_dotenv(".env.local")
+
+# Notion configuration
+NOTION_TOKEN = os.getenv("NOTION_TOKEN")
+DATABASE_ID = os.getenv("NOTION_DATABASE_ID")
+
+NOTION_HEADERS = {
+    "Authorization": f"Bearer {NOTION_TOKEN}",
+    "Content-Type": "application/json",
+    "Notion-Version": "2022-06-28"
+}
 
 
 class Assistant(Agent):
@@ -72,7 +83,7 @@ class Assistant(Agent):
             "objectives": objectives,
             "summary": summary
         }
-        logger.info(f"Saving wellness log entry: {entry}")  # Log the entry for debugging
+        logger.info(f"Saving wellness log entry: {entry}")
         try:
             try:
                 with open('wellness_log.json', 'r') as f:
@@ -82,11 +93,81 @@ class Assistant(Agent):
             log.append(entry)
             with open('wellness_log.json', 'w') as f:
                 json.dump(log, f, indent=2)
-            logger.info("Wellness log saved successfully.")  # Confirm in logs
+            logger.info("Wellness log saved successfully.")
             return "Log saved successfully."
         except Exception as e:
             logger.error(f"Error writing log: {e}")
             return "Sorry, couldn't save the log this time."
+
+    @function_tool
+    async def write_notion_entry(self, context: RunContext, mood: str = "unspecified", energy: str = "unspecified", goals: List[str] = None) -> str:
+        """Write a wellness check-in entry to Notion database.
+        
+        Use this to save structured wellness data to Notion for tracking and visualization.
+        Call this alongside write_wellness_log for dual logging.
+        
+        Args:
+            mood: User's mood description (e.g., "calm", "7/10 - optimistic").
+            energy: User's energy level (e.g., "medium", "6/10").
+            goals: List of 1-3 daily goals/objectives.
+        
+        Returns:
+            Confirmation message or error description.
+        """
+        if goals is None:
+            goals = ["none shared"]
+        
+        if not NOTION_TOKEN or not DATABASE_ID:
+            logger.warning("Notion credentials not configured")
+            return "Notion logging not configured. Check environment variables."
+        
+        url = "https://api.notion.com/v1/pages"
+        
+        payload = {
+            "parent": {"database_id": DATABASE_ID},
+            "properties": {
+                "Name": {
+                    "title": [
+                        {"text": {"content": f"Wellness Check - {datetime.now().strftime('%b %d, %Y')}"}}
+                    ]
+                },
+                "Date": {
+                    "date": {"start": datetime.now().isoformat()}
+                },
+                "Mood": {
+                    "rich_text": [
+                        {"text": {"content": mood}}
+                    ]
+                },
+                "Energy": {
+                    "rich_text": [
+                        {"text": {"content": energy}}
+                    ]
+                },
+                "Goals": {
+                    "rich_text": [
+                        {"text": {"content": ", ".join(goals)}}
+                    ]
+                }
+            }
+        }
+        
+        try:
+            response = requests.post(url, headers=NOTION_HEADERS, json=payload, timeout=10)
+            
+            if response.status_code == 200:
+                logger.info("Notion entry created successfully")
+                return "Notion entry saved successfully."
+            else:
+                logger.error(f"Notion API error: {response.status_code} - {response.text}")
+                return f"Notion save failed: {response.status_code}"
+        
+        except requests.exceptions.RequestException as e:
+            logger.error(f"Notion request error: {e}")
+            return "Couldn't reach Notion. Check your connection."
+        except Exception as e:
+            logger.error(f"Unexpected error saving to Notion: {e}")
+            return "Error saving to Notion."
 
 
 def prewarm(proc: JobProcess):

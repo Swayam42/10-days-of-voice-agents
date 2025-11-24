@@ -28,7 +28,7 @@ export const WelcomeView = forwardRef<HTMLDivElement, WelcomeViewProps>(
 
           {/* SplitText Heading Animation */}
           <SplitText
-            text="Your Health Companion"
+            text="Your AI Health Companion"
             className="text-white text-4xl md:text-6xl font-bold drop-shadow-lg"
             delay={100}
             duration={0.6}

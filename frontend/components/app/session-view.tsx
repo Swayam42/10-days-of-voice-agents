@@ -50,7 +50,7 @@ export function Fade({ top = false, bottom = false, className }: FadeProps) {
   return (
     <div
       className={cn(
-        'from-background pointer-events-none h-4 bg-linear-to-b to-transparent',
+        'from-transparent pointer-events-none h-4 bg-linear-to-b to-transparent',
         top && 'bg-linear-to-b',
         bottom && 'bg-linear-to-t',
         className
@@ -91,7 +91,7 @@ export const SessionView = ({
   }, [messages]);
 
   return (
-    <section className="bg-background relative z-10 h-full w-full overflow-hidden" {...props}>
+    <section className="bg-transparent relative z-10 h-full w-full overflow-hidden" {...props}>
       {/* Chat Transcript */}
       <div
         className={cn(
@@ -120,7 +120,7 @@ export const SessionView = ({
         {appConfig.isPreConnectBufferEnabled && (
           <PreConnectMessage messages={messages} className="pb-4" />
         )}
-        <div className="bg-background relative mx-auto max-w-2xl pb-3 md:pb-12">
+        <div className="bg-transparent relative mx-auto max-w-2xl pb-3 md:pb-12">
           <Fade bottom className="absolute inset-x-0 top-0 h-4 -translate-y-full" />
           <AgentControlBar controls={controls} onChatOpenChange={setChatOpen} />
         </div>

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "variables",
+    "title": "Variables",
+    "summary": "Variables are named containers that store data values in computer programs. They allow developers to label and reuse information throughout code execution, making programs dynamic and maintainable. Variables can hold different data types including numbers, text, and boolean values.",
+    "sample_question": "What is a variable and why is it essential in programming?"
+  },
+  {
+    "id": "loops",
+    "title": "Loops",
+    "summary": "Loops are control structures that enable repeated execution of code blocks. They are fundamental for automating repetitive tasks and processing collections of data. The two primary types are 'for' loops, which iterate a predetermined number of times, and 'while' loops, which continue until a specified condition becomes false.",
+    "sample_question": "Explain the key differences between for loops and while loops, including when to use each."
+  },
+  {
+    "id": "functions",
+    "title": "Functions",
+    "summary": "Functions are reusable blocks of code designed to perform specific tasks. They accept input parameters, execute operations, and return results. Functions promote code modularity, reduce redundancy, and improve program organization by encapsulating logic into named, callable units.",
+    "sample_question": "What are the benefits of using functions in programming, and how do parameters and return values work?"
+  },
+  {
+    "id": "conditionals",
+    "title": "Conditional Statements",
+    "summary": "Conditional statements allow programs to make decisions and execute different code paths based on logical conditions. The primary structures include if statements for single condition checks, else clauses for alternative execution, and elif for multiple condition evaluation. These constructs enable dynamic program behavior.",
+    "sample_question": "How do if-else statements control program flow, and what is the purpose of elif?"
+  }
+]

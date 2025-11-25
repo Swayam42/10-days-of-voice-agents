@@ -50,9 +50,9 @@ export function Fade({ top = false, bottom = false, className }: FadeProps) {
   return (
     <div
       className={cn(
-        'from-background pointer-events-none h-4 bg-linear-to-b to-transparent',
-        top && 'bg-linear-to-b',
-        bottom && 'bg-linear-to-t',
+        'pointer-events-none h-12',
+        top && 'bg-gradient-to-b from-background to-transparent',
+        bottom && 'bg-gradient-to-t from-background to-transparent',
         className
       )}
     />
@@ -99,12 +99,12 @@ export const SessionView = ({
           !chatOpen && 'pointer-events-none'
         )}
       >
-        <Fade top className="absolute inset-x-4 top-0 h-40" />
-        <ScrollArea ref={scrollAreaRef} className="px-4 pt-40 pb-[150px] md:px-6 md:pb-[180px]">
+        <Fade top className="absolute inset-x-4 top-0 h-24" />
+        <ScrollArea ref={scrollAreaRef} className="px-6 pt-24 pb-[180px] md:px-12 md:pb-[220px]">
           <ChatTranscript
             hidden={!chatOpen}
             messages={messages}
-            className="mx-auto max-w-2xl space-y-3 transition-opacity duration-300 ease-out"
+            className="mx-auto max-w-3xl space-y-4 transition-opacity duration-300 ease-out"
           />
         </ScrollArea>
       </div>
@@ -115,13 +115,13 @@ export const SessionView = ({
       {/* Bottom */}
       <MotionBottom
         {...BOTTOM_VIEW_MOTION_PROPS}
-        className="fixed inset-x-3 bottom-0 z-50 md:inset-x-12"
+        className="fixed inset-x-6 bottom-0 z-50 md:inset-x-16"
       >
         {appConfig.isPreConnectBufferEnabled && (
-          <PreConnectMessage messages={messages} className="pb-4" />
+          <PreConnectMessage messages={messages} className="pb-6" />
         )}
-        <div className="bg-background relative mx-auto max-w-2xl pb-3 md:pb-12">
-          <Fade bottom className="absolute inset-x-0 top-0 h-4 -translate-y-full" />
+        <div className="bg-background relative mx-auto max-w-3xl pb-6 md:pb-16">
+          <Fade bottom className="absolute inset-x-0 top-0 h-12 -translate-y-full" />
           <AgentControlBar controls={controls} onChatOpenChange={setChatOpen} />
         </div>
       </MotionBottom>

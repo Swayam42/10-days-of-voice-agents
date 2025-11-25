@@ -63,10 +63,10 @@ export default async function RootLayout({ children }: RootLayoutProps) {
         <meta name="description" content={pageDescription} />
         <ApplyThemeScript />
       </head>
-      <body className="overflow-x-hidden">
+      <body className="overflow-x-hidden font-light">
         {children}
-        <div className="group fixed bottom-0 left-1/2 z-50 mb-2 -translate-x-1/2">
-          <ThemeToggle className="translate-y-20 transition-transform delay-150 duration-300 group-hover:translate-y-0" />
+        <div className="group fixed bottom-4 right-4 z-50 md:bottom-6 md:right-6">
+          <ThemeToggle className="rounded-sm border border-foreground/10 bg-background p-2 opacity-40 transition-all duration-200 hover:opacity-100" />
         </div>
       </body>
     </html>

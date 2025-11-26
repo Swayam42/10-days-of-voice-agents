@@ -206,14 +206,14 @@ async def book_meeting_slot(
     logger.info(f"Meeting booked: {meeting_record}")
     
     # Generate confirmation message
-    confirmation = f"Perfect! I've booked a {meeting_type} meeting for you on {selected_slot['day']}, {selected_slot['date']} at {selected_slot['time']} IST. "
+    confirmation = f"Perfect! I've scheduled a {meeting_type} meeting for you on {selected_slot['day']}, {selected_slot['date']} at {selected_slot['time']} IST. "
     
     if lead_storage.get("email"):
-        confirmation += f"You'll receive a confirmation email at {lead_storage['email']} with calendar invite and meeting details. "
+        confirmation += f"Our team will send you a confirmation email at {lead_storage['email']} with the meeting link and details shortly. "
     else:
-        confirmation += "Could you share your email so I can send you a confirmation with calendar invite? "
+        confirmation += "Could you share your email so our team can send you the meeting link and confirmation? "
     
-    confirmation += "Is there anything else I can help you with?"
+    confirmation += "Is there anything else I can help you with today?"
     
     return confirmation
 

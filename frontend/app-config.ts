@@ -20,20 +20,20 @@ export interface AppConfig {
 }
 
 export const APP_CONFIG_DEFAULTS: AppConfig = {
-  companyName: 'LiveKit',
-  pageTitle: 'LiveKit Voice Agent',
-  pageDescription: 'A voice agent built with LiveKit',
+  companyName: 'XpressBees',
+  pageTitle: 'XpressBees SDR - AI Sales Assistant',
+  pageDescription: 'Intelligent sales development representative powered by voice AI. Schedule meetings, qualify leads, and accelerate your sales pipeline.',
 
   supportsChatInput: true,
-  supportsVideoInput: true,
-  supportsScreenShare: true,
+  supportsVideoInput: false,
+  supportsScreenShare: false,
   isPreConnectBufferEnabled: true,
 
   logo: '/lk-logo.svg',
-  accent: '#002cf2',
+  accent: '#FF6B35',
   logoDark: '/lk-logo-dark.svg',
-  accentDark: '#1fd5f9',
-  startButtonText: 'Start call',
+  accentDark: '#FF8557',
+  startButtonText: 'Start Conversation',
 
   // for LiveKit Cloud Sandbox
   sandboxId: undefined,

@@ -6,6 +6,7 @@ import type { AppConfig } from '@/app-config';
 import { ChatTranscript } from '@/components/app/chat-transcript';
 import { PreConnectMessage } from '@/components/app/preconnect-message';
 import { TileLayout } from '@/components/app/tile-layout';
+import { CartPanel } from '@/components/app/cart-panel';
 import {
   AgentControlBar,
   type ControlBarControls,
@@ -71,6 +72,7 @@ export const SessionView = ({
 
   const messages = useChatMessages();
   const [chatOpen, setChatOpen] = useState(false);
+  const [cartOpen, setCartOpen] = useState(false);
   const scrollAreaRef = useRef<HTMLDivElement>(null);
 
   const controls: ControlBarControls = {
@@ -92,15 +94,42 @@ export const SessionView = ({
 
   return (
     <section className="bg-background relative z-10 h-full w-full overflow-hidden" {...props}>
+      {/* Minimal Header */}
+      <div className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 px-6 py-4">
+        <div className="flex items-center justify-between max-w-7xl mx-auto">
+          <div className="flex items-center gap-3">
+            <span className="text-xl font-semibold text-gray-900">GroceryWala</span>
+            <div className="flex items-center gap-1.5 text-sm text-gray-600">
+              <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+              <span>Connected</span>
+            </div>
+          </div>
+          <button
+            onClick={() => setCartOpen(true)}
+            className="flex items-center gap-2 px-4 py-2 bg-gray-900 text-white text-sm font-medium rounded-md hover:bg-gray-800 transition-colors"
+          >
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M2 2h1.5l1.6 8h8.4l1.5-6H4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <circle cx="6" cy="13" r="1" fill="currentColor"/>
+              <circle cx="12" cy="13" r="1" fill="currentColor"/>
+            </svg>
+            View Cart
+          </button>
+        </div>
+      </div>
+
+      {/* Cart Panel */}
+      <CartPanel isOpen={cartOpen} onClose={() => setCartOpen(false)} />
+
       {/* Chat Transcript */}
       <div
         className={cn(
-          'fixed inset-0 grid grid-cols-1 grid-rows-1',
+          'fixed inset-0 grid grid-cols-1 grid-rows-1 mt-16',
           !chatOpen && 'pointer-events-none'
         )}
       >
         <Fade top className="absolute inset-x-4 top-0 h-40" />
-        <ScrollArea ref={scrollAreaRef} className="px-4 pt-40 pb-[150px] md:px-6 md:pb-[180px]">
+        <ScrollArea ref={scrollAreaRef} className="px-4 pt-24 pb-[150px] md:px-6 md:pb-[180px]">
           <ChatTranscript
             hidden={!chatOpen}
             messages={messages}

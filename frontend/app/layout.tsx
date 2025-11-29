@@ -1,4 +1,4 @@
-import { Public_Sans } from 'next/font/google';
+import { Public_Sans, Cinzel, Mukta, Tiro_Devanagari_Sanskrit } from 'next/font/google';
 import localFont from 'next/font/local';
 import { headers } from 'next/headers';
 import { ApplyThemeScript, ThemeToggle } from '@/components/app/theme-toggle';
@@ -8,6 +8,24 @@ import '@/styles/globals.css';
 const publicSans = Public_Sans({
   variable: '--font-public-sans',
   subsets: ['latin'],
+});
+
+const devanagari = Tiro_Devanagari_Sanskrit({
+  variable: '--font-devanagari',
+  subsets: ['latin'],
+  weight: ['400'],
+});
+
+const cinzel = Cinzel({
+  variable: '--font-cinzel',
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+});
+
+const mukta = Mukta({
+  variable: '--font-mukta',
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
 });
 
 const commitMono = localFont({
@@ -63,7 +81,12 @@ export default async function RootLayout({ children }: RootLayoutProps) {
         <meta name="description" content={pageDescription} />
         <ApplyThemeScript />
       </head>
-      <body className="overflow-x-hidden">
+      <body
+        className={cn(
+          'overflow-x-hidden',
+          'ramayan-body'
+        )}
+      >
         {children}
         <div className="group fixed bottom-0 left-1/2 z-50 mb-2 -translate-x-1/2">
           <ThemeToggle className="translate-y-20 transition-transform delay-150 duration-300 group-hover:translate-y-0" />

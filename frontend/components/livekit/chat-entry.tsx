@@ -38,20 +38,26 @@ export const ChatEntry = ({
     >
       <header
         className={cn(
-          'text-muted-foreground flex items-center gap-2 text-sm',
+          'text-muted-foreground flex items-center gap-2 text-xs md:text-sm',
           messageOrigin === 'local' ? 'flex-row-reverse' : 'text-left'
         )}
       >
-        {name && <strong>{name}</strong>}
-        <span className="font-mono text-xs opacity-0 transition-opacity ease-linear group-hover:opacity-100">
+        {name && (
+          <strong className="font-ramayan-devanagari text-[0.8rem] md:text-[0.9rem]">
+            {name}
+          </strong>
+        )}
+        <span className="font-mono text-[0.65rem] opacity-0 transition-opacity ease-linear group-hover:opacity-100 md:text-xs">
           {hasBeenEdited && '*'}
           {time.toLocaleTimeString(locale, { timeStyle: 'short' })}
         </span>
       </header>
       <span
         className={cn(
-          'max-w-4/5 rounded-[20px]',
-          messageOrigin === 'local' ? 'bg-muted ml-auto p-2' : 'mr-auto'
+          'mt-0.5 text-[0.85rem] leading-relaxed md:text-[0.95rem] break-words whitespace-pre-line',
+          messageOrigin === 'local'
+            ? 'ramayan-chat-player ml-auto text-left'
+            : 'ramayan-chat-gm mr-auto text-left'
         )}
       >
         {message}

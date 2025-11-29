@@ -13,19 +13,18 @@ const CONTAINER_MOTION_PROPS = {
       opacity: 0,
       transition: {
         ease: 'easeOut',
-        duration: 0.3,
-        staggerChildren: 0.1,
+        duration: 0.15,
+        staggerChildren: 0.03,
         staggerDirection: -1,
       },
     },
     visible: {
       opacity: 1,
       transition: {
-        delay: 0.2,
+        delay: 0,
         ease: 'easeOut',
-        duration: 0.3,
-        stagerDelay: 0.2,
-        staggerChildren: 0.1,
+        duration: 0.15,
+        staggerChildren: 0.03,
         staggerDirection: 1,
       },
     },
@@ -39,11 +38,15 @@ const MESSAGE_MOTION_PROPS = {
   variants: {
     hidden: {
       opacity: 0,
-      translateY: 10,
+      translateY: 5,
     },
     visible: {
       opacity: 1,
       translateY: 0,
+      transition: {
+        duration: 0.2,
+        ease: 'easeOut',
+      },
     },
   },
 };

@@ -1,0 +1,182 @@
+[
+    {
+        "id": "audio-001",
+        "name": "Wireless Earbuds Pro",
+        "description": "True wireless earbuds with active noise cancellation and 24hr battery.",
+        "price": 2499,
+        "currency": "INR",
+        "category": "electronics",
+        "color": "black",
+        "sizes": []
+    },
+    {
+        "id": "audio-002",
+        "name": "Bluetooth Headphones",
+        "description": "Over-ear headphones with deep bass and 40hr playtime.",
+        "price": 1899,
+        "currency": "INR",
+        "category": "electronics",
+        "color": "blue",
+        "sizes": []
+    },
+    {
+        "id": "audio-003",
+        "name": "Portable Speaker",
+        "description": "Waterproof Bluetooth speaker with 360° sound.",
+        "price": 1499,
+        "currency": "INR",
+        "category": "electronics",
+        "color": "red",
+        "sizes": []
+    },
+    {
+        "id": "smart-001",
+        "name": "Fitness Smartwatch",
+        "description": "Track your health with heart rate monitor, sleep tracking, and 50+ sports modes.",
+        "price": 3999,
+        "currency": "INR",
+        "category": "electronics",
+        "color": "black",
+        "sizes": []
+    },
+    {
+        "id": "smart-002",
+        "name": "Power Bank 20000 M-A-H",
+        "description": "Fast charging power bank with dual USB ports.",
+        "price": 1299,
+        "currency": "INR",
+        "category": "electronics",
+        "color": "white",
+        "sizes": []
+    },
+    {
+        "id": "tee-001",
+        "name": "Classic Cotton Tee",
+        "description": "Premium 100% cotton t-shirt, perfect for everyday wear.",
+        "price": 499,
+        "currency": "INR",
+        "category": "clothing",
+        "color": "white",
+        "sizes": ["S", "M", "L", "XL"]
+    },
+    {
+        "id": "tee-002",
+        "name": "Graphic Print Tee",
+        "description": "Trendy graphic t-shirt with modern design.",
+        "price": 599,
+        "currency": "INR",
+        "category": "clothing",
+        "color": "black",
+        "sizes": ["S", "M", "L", "XL"]
+    },
+    {
+        "id": "tee-003",
+        "name": "Sports Performance Tee",
+        "description": "Moisture-wicking athletic t-shirt for active lifestyle.",
+        "price": 699,
+        "currency": "INR",
+        "category": "clothing",
+        "color": "navy",
+        "sizes": ["M", "L", "XL"]
+    },
+    {
+        "id": "hoodie-001",
+        "name": "Essential Pullover Hoodie",
+        "description": "Cozy fleece hoodie with kangaroo pocket.",
+        "price": 1299,
+        "currency": "INR",
+        "category": "clothing",
+        "color": "grey",
+        "sizes": ["M", "L", "XL"]
+    },
+    {
+        "id": "hoodie-002",
+        "name": "Zip-Up Hoodie",
+        "description": "Stylish zip hoodie with side pockets.",
+        "price": 1499,
+        "currency": "INR",
+        "category": "clothing",
+        "color": "black",
+        "sizes": ["S", "M", "L", "XL"]
+    },
+    {
+        "id": "jacket-001",
+        "name": "Windbreaker Jacket",
+        "description": "Lightweight water-resistant windbreaker.",
+        "price": 1899,
+        "currency": "INR",
+        "category": "clothing",
+        "color": "olive",
+        "sizes": ["M", "L", "XL"]
+    },
+    {
+        "id": "home-001",
+        "name": "Stainless Steel Water Bottle",
+        "description": "Insulated water bottle keeps drinks cold for 24 hours.",
+        "price": 599,
+        "currency": "INR",
+        "category": "home",
+        "color": "silver",
+        "sizes": []
+    },
+    {
+        "id": "home-002",
+        "name": "Ceramic Coffee Mug Set",
+        "description": "Set of 2 elegant ceramic mugs for coffee or tea.",
+        "price": 399,
+        "currency": "INR",
+        "category": "home",
+        "color": "white",
+        "sizes": []
+    },
+    {
+        "id": "home-003",
+        "name": "LED Desk Lamp",
+        "description": "Adjustable LED lamp with 3 brightness levels.",
+        "price": 899,
+        "currency": "INR",
+        "category": "home",
+        "color": "black",
+        "sizes": []
+    },
+    {
+        "id": "home-004",
+        "name": "Premium Yoga Mat",
+        "description": "Non-slip yoga mat with carrying strap.",
+        "price": 799,
+        "currency": "INR",
+        "category": "home",
+        "color": "purple",
+        "sizes": []
+    },
+    {
+        "id": "acc-001",
+        "name": "Canvas Backpack",
+        "description": "Durable canvas backpack with laptop compartment.",
+        "price": 1299,
+        "currency": "INR",
+        "category": "accessories",
+        "color": "grey",
+        "sizes": []
+    },
+    {
+        "id": "acc-002",
+        "name": "Leather Wallet",
+        "description": "Genuine leather bifold wallet with RFID protection.",
+        "price": 899,
+        "currency": "INR",
+        "category": "accessories",
+        "color": "brown",
+        "sizes": []
+    },
+    {
+        "id": "acc-003",
+        "name": "Sunglasses",
+        "description": "UV protection sunglasses with polarized lenses.",
+        "price": 699,
+        "currency": "INR",
+        "category": "accessories",
+        "color": "black",
+        "sizes": []
+    }
+]

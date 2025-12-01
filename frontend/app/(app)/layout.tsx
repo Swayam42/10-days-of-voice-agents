@@ -7,18 +7,12 @@ interface LayoutProps {
 
 export default async function Layout({ children }: LayoutProps) {
   const hdrs = await headers();
-  const { companyName, logo, logoDark } = await getAppConfig(hdrs);
+  const { companyName } = await getAppConfig(hdrs);
 
   return (
     <>
-      <header className="fixed top-0 left-0 z-50 hidden w-full flex-row justify-between p-6 md:flex">
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://livekit.io"
-          className="scale-100 transition-transform duration-300 hover:scale-110"
-        >
-        </a>
+      <header className="fixed top-0 left-0 z-50 w-full flex flex-row justify-center p-6">
+        <h1 className="text-xl font-bold tracking-tight">{companyName}</h1>
       </header>
 
       {children}

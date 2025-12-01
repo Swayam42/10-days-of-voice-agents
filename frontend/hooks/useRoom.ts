@@ -36,13 +36,20 @@ export function useRoom(appConfig: AppConfig) {
     };
   }, [room]);
 
-  const tokenSource = useMemo(
-    () =>
-      TokenSource.custom(async () => {
+  const startSession = useCallback((playerName?: string) => {
+    setIsSessionActive(true);
+
+    if (room.state === 'disconnected') {
+      const { isPreConnectBufferEnabled } = appConfig;
+      
+      // Create token source with the player name
+      const tokenSource = TokenSource.custom(async () => {
         const url = new URL(
           process.env.NEXT_PUBLIC_CONN_DETAILS_ENDPOINT ?? '/api/connection-details',
           window.location.origin
         );
+
+        console.log('[Frontend] Fetching token with player_name:', playerName);
 
         try {
           const res = await fetch(url.toString(), {
@@ -52,6 +59,7 @@ export function useRoom(appConfig: AppConfig) {
               'X-Sandbox-Id': appConfig.sandboxId ?? '',
             },
             body: JSON.stringify({
+              player_name: playerName,
               room_config: appConfig.agentName
                 ? {
                     agents: [{ agent_name: appConfig.agentName }],
@@ -64,15 +72,8 @@ export function useRoom(appConfig: AppConfig) {
           console.error('Error fetching connection details:', error);
           throw new Error('Error fetching connection details!');
         }
-      }),
-    [appConfig]
-  );
-
-  const startSession = useCallback(() => {
-    setIsSessionActive(true);
-
-    if (room.state === 'disconnected') {
-      const { isPreConnectBufferEnabled } = appConfig;
+      });
+      
       Promise.all([
         room.localParticipant.setMicrophoneEnabled(true, undefined, {
           preConnectBuffer: isPreConnectBufferEnabled,
@@ -98,7 +99,7 @@ export function useRoom(appConfig: AppConfig) {
         });
       });
     }
-  }, [room, appConfig, tokenSource]);
+  }, [room, appConfig]);
 
   const endSession = useCallback(() => {
     setIsSessionActive(false);

@@ -20,20 +20,20 @@ export interface AppConfig {
 }
 
 export const APP_CONFIG_DEFAULTS: AppConfig = {
-  companyName: 'LiveKit',
-  pageTitle: 'LiveKit Voice Agent',
-  pageDescription: 'A voice agent built with LiveKit',
+  companyName: 'Improv Battle',
+  pageTitle: 'Improv Battle - Voice Improv Game Show',
+  pageDescription: 'A voice-first improv performance game powered by LiveKit',
 
   supportsChatInput: true,
-  supportsVideoInput: true,
-  supportsScreenShare: true,
+  supportsVideoInput: false,
+  supportsScreenShare: false,
   isPreConnectBufferEnabled: true,
 
   logo: '/lk-logo.svg',
-  accent: '#002cf2',
+  accent: '#d97706',
   logoDark: '/lk-logo-dark.svg',
-  accentDark: '#1fd5f9',
-  startButtonText: 'Start call',
+  accentDark: '#f59e0b',
+  startButtonText: 'Start Improv Battle',
 
   // for LiveKit Cloud Sandbox
   sandboxId: undefined,

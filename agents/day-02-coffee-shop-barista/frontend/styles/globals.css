@@ -1,0 +1,266 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@font-face {
+  font-family: 'Brickson';
+  src: url('/fonts/Brickson.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@custom-variant dark (&:is(.dark *));
+:root {
+  --radius: 0.625rem;
+  --background: #E8C5A8;
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: #282827;
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.269 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.371 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  /* Fonts */
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  --font-heading: var(--font-serif);
+
+  /* Mapped Colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+@layer base {
+  * {
+    @apply border-foreground/20 outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, .heading {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+}
+
+@layer utils {
+  .btn-primary {
+    @apply bg-primary text-primary-foreground px-6 py-3 rounded-md font-semibold 
+    transition-all hover:bg-accent hover:scale-[1.02];
+  }
+
+  .nav-link {
+    @apply text-foreground/90 font-semibold uppercase tracking-wide px-4 hover:text-primary;
+  }
+
+  .card {
+    @apply bg-card shadow-md rounded-lg p-6 border border-border;
+  }
+
+  /* Shimmer */
+  .animate-text-shimmer {
+    animation: shimmer 3s infinite linear;
+    background: linear-gradient(90deg,
+        var(--muted-foreground) 0%,
+        var(--secondary-foreground) 50%,
+        var(--muted-foreground) 100%
+      );
+    background-size: 200% 100%;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+}
+
+/* Welcome Page Styles */
+.welcome-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+}
+
+.welcome-left {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: #313131;
+  padding-left: 4rem;
+}
+
+.welcome-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #E6B186;
+  background-color: rgba(255, 165, 0, 0.1);
+  border: 1px solid #E6B186;
+  border-radius: 0.375rem;
+  font-family: 'Cinzel', serif;
+}
+
+.welcome-title {
+  color: white;
+  line-height: 1;
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-family: 'Brickson',serif;
+  letter-spacing: 0.14em;
+  font-weight: lighter;
+}
+
+.welcome-subtitle {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  font-family: 'Cinzel', serif;
+}
+
+.welcome-right {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: #e6b186;
+}
+
+.welcome-logo-container {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
+
+.welcome-logo {
+  border-radius: 9999px;
+  background-color: white;
+  padding: 0.5rem;
+}
+
+.welcome-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: scale(0.5px) translateX(15px) translateY(-10px);
+  transition: transform 0.3s ease;
+}
+
+.welcome-barista {
+  margin-bottom: 0.1 rem; /* Reduce to bring closer to button */
+  margin-top: 7 rem; /* Move SVG down - increase to move more */
+  margin-top: 15 rem;
+  background: transparent;
+  transform: scale(1.6) translateX(17px) translateY(-31px);
+}
+.murf-link-embed{
+color:#ead5f4;
+font-weight:bold;
+}
+
+.welcome-button {
+  padding: 1.5rem 3rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  border-radius: 9999px;
+  background-color: white;
+  color: rgb(43, 41, 41);
+  font-family:'Cormorant Garamond', serif;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.2s;
+}
+
+.welcome-button:hover {
+  background-color: #df913d;
+}
+.welcome-button{
+  border-radius: 0.2rem;
+}

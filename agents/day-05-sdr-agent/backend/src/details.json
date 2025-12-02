@@ -1,0 +1,259 @@
+{
+  "company": {
+    "name": "XpressBees",
+    "website": "https://www.xpressbees.com/",
+    "about_us_url": "https://www.xpressbees.com/about-us",
+    "contact_url": "https://www.xpressbees.com/contact-us",
+    "career_url": "https://www.xpressbees.com/career",
+    "description": "XpressBees is a leading tech-powered logistics company in India, delivering over 3 million shipments daily with services covering B2C ecommerce logistics, B2B express delivery, cross-border shipments, and 3PL warehousing solutions across 2,500+ cities and 20,000+ pin codes.",
+    "industries_served": [
+      "ecommerce",
+      "pharma",
+      "banking",
+      "manufacturing",
+      "food",
+      "automotive",
+      "consumer_goods"
+    ],
+    "key_strengths": [
+      "High on-time delivery performance",
+      "Strong tech-driven tracking and analytics",
+      "Vast logistics and warehousing network",
+      "Scalable solutions for businesses of all sizes"
+    ],
+    "coverage": {
+      "pin_codes_covered": 20000,
+      "cities_covered": 2500,
+      "offices_and_centers": 3000,
+      "airports_connected": 52
+    },
+    "daily_shipment_volume": 3000000,
+    "contact_info": {
+      "phone_numbers": ["080-12345678", "022-12345678"],
+      "email": "support@xpressbees.com",
+      "address": "XpressBees Corporate Office, Mumbai, India"
+    }
+  },
+  "services": {
+    "b2c_xpress": {
+      "description": "Integrated ecommerce logistics with real-time tracking, COD and prepaid shipments, and extensive last-mile delivery.",
+      "features": [
+        "Real-time order tracking via app and website",
+        "Cash on delivery and prepaid orders",
+        "Same-day and next-day delivery options",
+        "Reverse logistics for returns management"
+      ]
+    },
+    "b2b_xpress": {
+      "description": "Dedicated express logistics solutions focused on enterprise supply chains requiring secure, fast, and reliable delivery.",
+      "features": [
+        "Customized delivery SLAs",
+        "Real-time shipment analytics",
+        "Contract logistics and SCM consultancy"
+      ]
+    },
+    "cross_border_logistics": {
+      "description": "Cross-border import and export logistics with customs clearance, compliance, and international freight forwarding.",
+      "features": [
+        "End-to-end shipment visibility",
+        "Customs documentation assistance",
+        "Partnered with global courier networks"
+      ]
+    },
+    "third_party_logistics": {
+      "description": "Comprehensive 3PL warehousing and fulfillment with omni-channel integration supporting inventory, packaging, and delivery.",
+      "features": [
+        "Inventory management systems",
+        "Order picking and packing",
+        "Returns processing",
+        "Custom packaging solutions"
+      ]
+    }
+  },
+  "faqs": [
+    {
+      "question": "What does your product do?",
+      "answer": "XpressBees provides end-to-end logistics solutions across India, including ecommerce parcel delivery, express B2B shipments, cross-border import-export, and warehousing services that ensure fast, reliable, and tech-enabled delivery."
+    },
+    {
+      "question": "Do you have a free tier?",
+      "answer": "We do not offer a free tier, as our services are customized based on shipment volume, weight, distance, and delivery speed requirements. However, we provide competitive pricing and volume discounts tailored to your needs."
+    },
+    {
+      "question": "Who is this for?",
+      "answer": "Our logistics solutions are designed for ecommerce businesses, manufacturers, pharmaceutical companies, banking institutions, food delivery services, automotive sector clients, and consumer goods companies seeking reliable supply chain and delivery services."
+    },
+    {
+      "question": "How can I track my shipment?",
+      "answer": "Use the tracking number provided by XpressBees on our website or mobile app for real-time shipment status updates."
+    },
+    {
+      "question": "What is your delivery coverage area?",
+      "answer": "We cover over 20,000 pin codes and 2,500+ cities across India."
+    },
+    {
+      "question": "What delivery options are available?",
+      "answer": "We offer standard, same-day, and next-day delivery options depending on the destination."
+    },
+    {
+      "question": "Do you handle reverse logistics?",
+      "answer": "Yes, we provide hassle-free returns management and reverse logistics services."
+    },
+    {
+      "question": "How do I become a partner or use XpressBees for my business?",
+      "answer": "Please contact our sales team through the contact page or by phone to discuss partnership or service onboarding."
+    },
+    {
+      "question": "Which industries do you specialize in?",
+      "answer": "We specialize in ecommerce, pharmacy, banking, manufacturing, food delivery, automotive, and consumer goods logistics."
+    },
+    {
+      "question": "What makes XpressBees different from other logistics companies?",
+      "answer": "Our technology-enabled processes, vast network, high on-time delivery rates, and customized solutions make us a preferred partner."
+    }
+  ],
+  "common_objections": [
+    {
+      "objection": "Your pricing seems high compared to others.",
+      "response": "Our pricing reflects our high service quality, technology infrastructure, and coverage. We also offer volume-based discounts and customizable plans."
+    },
+    {
+      "objection": "We want faster delivery options.",
+      "response": "We provide same-day and next-day delivery services in select cities to ensure speed and reliability."
+    },
+    {
+      "objection": "We have had issues with tracking in the past.",
+      "response": "Our real-time tracking system is continuously updated to improve accuracy and customer visibility. Our support team is available to assist you anytime."
+    }
+  ],
+  "greetings": [
+    "Hello! Welcome to XpressBees. How can we assist with your logistics needs today?",
+    "Thank you for connecting with XpressBees, India's trusted logistics partner. What can I help you with?",
+    "Hi! You're speaking with XpressBees. How may I support your delivery or supply chain requirements today?"
+  ],
+  "lead_capture_flow": [
+    "May I know your full name?",
+    "Could you please share your company name?",
+    "Please provide your official email address.",
+    "What is your role in the company?",
+    "Can you tell me about your primary use case for our services?",
+    "What is your team size for logistics management?",
+    "When are you looking to start using our services? Immediately, soon, or later?"
+  ],
+  "lead_capture_fields": [
+    "Name",
+    "Company",
+    "Email",
+    "Role",
+    "Use_case",
+    "Team_size",
+    "Timeline"
+  ],
+  "pricing": {
+    "general_info": "Pricing depends on shipment type, weight, volume, distance, and service level. Customized quotations available upon request.",
+    "services_pricing": [
+      {
+        "service": "Standard Delivery",
+        "basis": "Weight and distance",
+        "notes": "Most common for ecommerce, with competitive rates."
+      },
+      {
+        "service": "Same-Day Delivery",
+        "basis": "City-specific availability and parcel size",
+        "notes": "Premium service available in major cities."
+      },
+      {
+        "service": "Cross-Border Logistics",
+        "basis": "Customs, documentation, weight and volume",
+        "notes": "Pricing tailored per shipment."
+      },
+      {
+        "service": "3PL Warehousing",
+        "basis": "Storage volume, handling, and fulfillment requirements",
+        "notes": "Flexible packages for businesses of varying sizes."
+      }
+    ]
+  },
+  "calendar_availability": {
+    "timezone": "Asia/Kolkata",
+    "available_slots": [
+      {
+        "id": "slot_1",
+        "date": "2025-11-27",
+        "day": "Thursday",
+        "time": "10:00 AM",
+        "duration_minutes": 30,
+        "available": true
+      },
+      {
+        "id": "slot_2",
+        "date": "2025-11-27",
+        "day": "Thursday",
+        "time": "2:00 PM",
+        "duration_minutes": 30,
+        "available": true
+      },
+      {
+        "id": "slot_3",
+        "date": "2025-11-28",
+        "day": "Friday",
+        "time": "11:00 AM",
+        "duration_minutes": 30,
+        "available": true
+      },
+      {
+        "id": "slot_4",
+        "date": "2025-11-28",
+        "day": "Friday",
+        "time": "3:00 PM",
+        "duration_minutes": 30,
+        "available": true
+      },
+      {
+        "id": "slot_5",
+        "date": "2025-11-29",
+        "day": "Saturday",
+        "time": "10:00 AM",
+        "duration_minutes": 30,
+        "available": true
+      },
+      {
+        "id": "slot_6",
+        "date": "2025-12-02",
+        "day": "Monday",
+        "time": "9:00 AM",
+        "duration_minutes": 30,
+        "available": true
+      },
+      {
+        "id": "slot_7",
+        "date": "2025-12-02",
+        "day": "Monday",
+        "time": "4:00 PM",
+        "duration_minutes": 30,
+        "available": true
+      }
+    ]
+  },
+  "meeting_types": [
+    {
+      "type": "demo",
+      "name": "Product Demo",
+      "duration": 30,
+      "description": "Live demonstration of XpressBees logistics platform"
+    },
+    {
+      "type": "consultation",
+      "name": "Business Consultation",
+      "duration": 30,
+      "description": "Discuss your logistics needs and custom solutions"
+    },
+    {
+      "type": "onboarding",
+      "name": "Onboarding Call",
+      "duration": 45,
+      "description": "Get started with XpressBees services"
+    }
+  ]
+}
+

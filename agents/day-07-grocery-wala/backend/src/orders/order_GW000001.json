@@ -1,0 +1,121 @@
+{
+  "order_id": "GW000001",
+  "timestamp": "2025-11-28T19:58:45.781395",
+  "date": "28 November 2025",
+  "time": "07:58 PM",
+  "status": "placed",
+  "items": [
+    {
+      "id": "bread",
+      "name": "Bread (White)",
+      "brand": "Britannia",
+      "price": 35,
+      "unit": "400g loaf",
+      "tags": [
+        "snack",
+        "breakfast"
+      ],
+      "category": "snacks",
+      "quantity": 1
+    },
+    {
+      "id": "cheese_slices",
+      "name": "Cheese Slices",
+      "brand": "Amul",
+      "price": 130,
+      "unit": "200g pack",
+      "tags": [
+        "dairy",
+        "perishable"
+      ],
+      "category": "dairy",
+      "quantity": 1
+    },
+    {
+      "id": "sweet_corn",
+      "name": "Sweet Corn (Frozen)",
+      "brand": "McCain",
+      "price": 95,
+      "unit": "400g",
+      "tags": [
+        "vegetable",
+        "frozen"
+      ],
+      "category": "snacks",
+      "quantity": 1
+    },
+    {
+      "id": "butter",
+      "name": "Amul Butter",
+      "brand": "Amul",
+      "price": 55,
+      "unit": "100g",
+      "tags": [
+        "dairy",
+        "perishable"
+      ],
+      "category": "dairy",
+      "quantity": 1
+    },
+    {
+      "id": "black_pepper",
+      "name": "Black Pepper Powder",
+      "brand": "Everest",
+      "price": 85,
+      "unit": "50g",
+      "tags": [
+        "spice"
+      ],
+      "category": "spices",
+      "quantity": 1
+    },
+    {
+      "id": "chilli_flakes",
+      "name": "Chilli Flakes",
+      "brand": "Keya",
+      "price": 55,
+      "unit": "50g",
+      "tags": [
+        "spice"
+      ],
+      "category": "spices",
+      "quantity": 1
+    },
+    {
+      "id": "oregano",
+      "name": "Oregano",
+      "brand": "Keya",
+      "price": 60,
+      "unit": "50g",
+      "tags": [
+        "spice",
+        "herb"
+      ],
+      "category": "spices",
+      "quantity": 1
+    },
+    {
+      "id": "onion",
+      "name": "Onions",
+      "brand": "Fresh",
+      "price": 25,
+      "unit": "1kg",
+      "tags": [
+        "vegetable",
+        "perishable"
+      ],
+      "category": "vegetables",
+      "quantity": 2
+    }
+  ],
+  "total_amount": 565,
+  "item_count": 9,
+  "customer_info": {
+    "name": "Swayam",
+    "phone": "1234567890",
+    "address": "Lot Number 15, Unit 4, Puri"
+  },
+  "payment_method": "COD",
+  "upi_id": null,
+  "delivery_instructions": null
+}

@@ -1,0 +1,235 @@
+/* Cart Display - Indian Grocery Theme */
+
+.cart-display {
+  position: fixed;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 320px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  border: 2px solid #ff6b35;
+  overflow: hidden;
+  z-index: 100;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+}
+
+.cart-empty {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.cart-empty-text {
+  color: #718096;
+  font-size: 0.875rem;
+  margin: 0.5rem 0 0 0;
+}
+
+/* Header */
+.cart-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.25rem;
+  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+  color: white;
+}
+
+.cart-icon {
+  font-size: 1.5rem;
+}
+
+.cart-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  flex: 1;
+}
+
+.cart-badge {
+  background: white;
+  color: #ff6b35;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  min-width: 24px;
+  text-align: center;
+}
+
+/* Items List */
+.cart-items {
+  max-height: 320px;
+  overflow-y: auto;
+  padding: 0.75rem;
+}
+
+.cart-items::-webkit-scrollbar {
+  width: 6px;
+}
+
+.cart-items::-webkit-scrollbar-track {
+  background: #f7fafc;
+  border-radius: 3px;
+}
+
+.cart-items::-webkit-scrollbar-thumb {
+  background: #cbd5e0;
+  border-radius: 3px;
+}
+
+.cart-items::-webkit-scrollbar-thumb:hover {
+  background: #a0aec0;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  background: #fef5e7;
+  border-radius: 8px;
+  border-left: 3px solid #ff9800;
+  animation: itemFadeIn 0.3s ease-out;
+}
+
+@keyframes itemFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.cart-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.cart-item-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #2d3748;
+  line-height: 1.2;
+}
+
+.cart-item-unit {
+  font-size: 0.75rem;
+  color: #718096;
+}
+
+.cart-item-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+}
+
+.cart-item-qty {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #ff6b35;
+  background: white;
+  padding: 0.125rem 0.5rem;
+  border-radius: 4px;
+}
+
+.cart-item-price {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #2d3748;
+}
+
+/* Total */
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  background: #fff9e6;
+  border-top: 2px dashed #ffd54f;
+  border-bottom: 2px dashed #ffd54f;
+}
+
+.cart-total-label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2d3748;
+}
+
+.cart-total-amount {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ff6b35;
+}
+
+/* Footer */
+.cart-footer {
+  padding: 0.75rem 1.25rem;
+  text-align: center;
+  background: white;
+}
+
+.cart-footer-text {
+  font-size: 0.75rem;
+  color: #718096;
+  font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .cart-display {
+    right: 1rem;
+    width: 280px;
+  }
+
+  .cart-items {
+    max-height: 240px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cart-display {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    top: auto;
+    transform: none;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 16px 16px 0 0;
+    max-height: 50vh;
+  }
+
+  .cart-items {
+    max-height: calc(50vh - 200px);
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

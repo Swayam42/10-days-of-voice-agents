@@ -1,0 +1,319 @@
+{
+  "recipes": [
+    {
+      "name": "dal chawal",
+      "items": [
+        "rice_basmati",
+        "toor_dal",
+        "turmeric",
+        "cumin_seeds",
+        "onion",
+        "tomato",
+        "garlic",
+        "ginger",
+        "green_chilli",
+        "salt",
+        "oil",
+        "ghee",
+        "coriander_leaves"
+      ],
+      "portions": 2
+    },
+    {
+      "name": "dal rice",
+      "items": [
+        "rice_basmati",
+        "toor_dal",
+        "turmeric",
+        "cumin_seeds",
+        "onion",
+        "tomato",
+        "garlic",
+        "ginger",
+        "green_chilli",
+        "salt",
+        "oil",
+        "ghee",
+        "coriander_leaves"
+      ],
+      "portions": 2
+    },
+    {
+      "name": "paneer curry",
+      "items": [
+        "paneer",
+        "onion",
+        "tomato",
+        "ginger",
+        "garlic",
+        "green_chilli",
+        "coriander_leaves",
+        "garam_masala",
+        "turmeric",
+        "chilli_powder",
+        "coriander_powder",
+        "salt",
+        "mustard_oil"
+      ],
+      "portions": 3
+    },
+    {
+      "name": "paneer sabzi",
+      "items": [
+        "paneer",
+        "onion",
+        "tomato",
+        "ginger",
+        "garlic",
+        "coriander_leaves",
+        "turmeric",
+        "chilli_powder",
+        "coriander_powder",
+        "garam_masala",
+        "salt",
+        "oil"
+      ],
+      "portions": 3
+    },
+    {
+      "name": "aloo sabzi",
+      "items": [
+        "potato",
+        "onion",
+        "tomato",
+        "ginger",
+        "cumin_seeds",
+        "turmeric",
+        "chilli_powder",
+        "coriander_powder",
+        "mustard_oil",
+        "salt"
+      ],
+      "portions": 2
+    },
+    {
+      "name": "roti",
+      "items": [
+        "atta",
+        "salt",
+        "ghee",
+        "water"
+      ],
+      "portions": 1
+    },
+    {
+      "name": "chapati",
+      "items": [
+        "atta",
+        "salt",
+        "water",
+        "ghee"
+      ],
+      "portions": 1
+    },
+    {
+      "name": "dal fry",
+      "items": [
+        "moong_dal",
+        "tur_dal",
+        "onion",
+        "tomato",
+        "ginger",
+        "garlic",
+        "green_chilli",
+        "cumin_seeds",
+        "turmeric",
+        "coriander_powder",
+        "chilli_powder",
+        "salt",
+        "ghee",
+        "coriander_leaves"
+      ],
+      "portions": 2
+    },
+    {
+      "name": "egg curry",
+      "items": [
+        "eggs",
+        "onion",
+        "tomato",
+        "ginger",
+        "garlic",
+        "green_chilli",
+        "garam_masala",
+        "turmeric",
+        "chilli_powder",
+        "coriander_powder",
+        "mustard_oil",
+        "salt",
+        "coriander_leaves"
+      ],
+      "portions": 2
+    },
+    {
+      "name": "breakfast",
+      "items": [
+        "atta",
+        "eggs",
+        "milk",
+        "biscuits",
+        "tea_powder",
+        "sugar"
+      ],
+      "portions": 2
+    },
+    {
+      "name": "chai",
+      "items": [
+        "tea_powder",
+        "milk",
+        "sugar",
+        "cardamom"
+      ],
+      "portions": 1
+    },
+    {
+      "name": "tea",
+      "items": [
+        "tea_powder",
+        "milk",
+        "sugar",
+        "cardamom"
+      ],
+      "portions": 1
+    },
+    {
+      "name": "cheese corn sandwich",
+      "items": [
+        "bread",
+        "cheese_slices",
+        "sweet_corn",
+        "butter",
+        "black_pepper",
+        "salt",
+        "chilli_flakes",
+        "oregano"
+      ],
+      "portions": 1
+    },
+    {
+      "name": "pav bhaji",
+      "items": [
+        "pav_bread",
+        "potato",
+        "onion",
+        "tomato",
+        "capsicum",
+        "peas",
+        "ginger",
+        "garlic",
+        "butter",
+        "pav_bhaji_masala",
+        "turmeric",
+        "chilli_powder",
+        "salt",
+        "lemon",
+        "coriander_leaves"
+      ],
+      "portions": 3
+    },
+    {
+      "name": "masala dosa",
+      "items": [
+        "dosa_batter",
+        "potato",
+        "onion",
+        "green_chilli",
+        "curry_leaves",
+        "mustard_seeds",
+        "turmeric",
+        "salt",
+        "oil",
+        "ghee"
+      ],
+      "portions": 2
+    },
+    {
+      "name": "plain dosa",
+      "items": [
+        "dosa_batter",
+        "oil",
+        "ghee",
+        "salt"
+      ],
+      "portions": 2
+    },
+    {
+      "name": "omelette",
+      "items": [
+        "eggs",
+        "onion",
+        "green_chilli",
+        "salt",
+        "black_pepper",
+        "oil",
+        "coriander_leaves"
+      ],
+      "portions": 1
+    },
+    {
+      "name": "poori",
+      "items": [
+        "atta",
+        "salt",
+        "water",
+        "oil"
+      ],
+      "portions": 2
+    },
+    {
+      "name": "poori aloo",
+      "items": [
+        "atta",
+        "salt",
+        "water",
+        "oil",
+        "potato",
+        "turmeric",
+        "green_chilli",
+        "cumin_seeds",
+        "salt",
+        "coriander_leaves"
+      ],
+      "portions": 2
+    },
+    {
+      "name": "poha",
+      "items": [
+        "poha",
+        "onion",
+        "potato",
+        "green_chilli",
+        "mustard_seeds",
+        "turmeric",
+        "peanuts",
+        "salt",
+        "curry_leaves",
+        "lemon",
+        "coriander_leaves"
+      ],
+      "portions": 2
+    },
+    {
+      "name": "upma",
+      "items": [
+        "suji",
+        "onion",
+        "carrot",
+        "beans",
+        "peas",
+        "mustard_seeds",
+        "curry_leaves",
+        "green_chilli",
+        "salt",
+        "ghee"
+      ],
+      "portions": 2
+    }
+  ]
+}

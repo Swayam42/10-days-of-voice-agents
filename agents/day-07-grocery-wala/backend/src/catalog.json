@@ -1,0 +1,450 @@
+{
+  "categories": {
+    "staples": {
+      "name": "Staples & Grains",
+      "items": [
+        {
+          "id": "rice_basmati",
+          "name": "Basmati Rice",
+          "brand": "India Gate",
+          "price": 180,
+          "unit": "1kg",
+          "tags": ["gluten-free", "staple"]
+        },
+        {
+          "id": "atta",
+          "name": "Whole Wheat Flour (Atta)",
+          "brand": "Aashirvaad",
+          "price": 65,
+          "unit": "1kg",
+          "tags": ["staple"]
+        },
+        {
+          "id": "toor_dal",
+          "name": "Toor Dal (Arhar Dal)",
+          "brand": "Tata Sampann",
+          "price": 120,
+          "unit": "500g",
+          "tags": ["protein", "dal", "staple"]
+        },
+        {
+          "id": "tur_dal",
+          "name": "Tur Dal",
+          "brand": "Tata Sampann",
+          "price": 120,
+          "unit": "500g",
+          "tags": ["protein", "dal", "staple"]
+        },
+        {
+          "id": "moong_dal",
+          "name": "Moong Dal",
+          "brand": "Tata Sampann",
+          "price": 110,
+          "unit": "500g",
+          "tags": ["protein", "dal", "staple"]
+        },
+        {
+          "id": "poha",
+          "name": "Poha (Flattened Rice)",
+          "brand": "Aashirvaad",
+          "price": 40,
+          "unit": "500g",
+          "tags": ["breakfast", "staple"]
+        },
+        {
+          "id": "suji",
+          "name": "Sooji (Rava/Semolina)",
+          "brand": "Aashirvaad",
+          "price": 45,
+          "unit": "500g",
+          "tags": ["breakfast", "staple"]
+        }
+      ]
+    },
+    "dairy": {
+      "name": "Dairy & Eggs",
+      "items": [
+        {
+          "id": "milk",
+          "name": "Full Cream Milk",
+          "brand": "Amul",
+          "price": 32,
+          "unit": "500ml",
+          "tags": ["dairy", "perishable"]
+        },
+        {
+          "id": "paneer",
+          "name": "Fresh Paneer",
+          "brand": "Mother Dairy",
+          "price": 90,
+          "unit": "200g",
+          "tags": ["dairy", "perishable", "protein"]
+        },
+        {
+          "id": "curd",
+          "name": "Dahi (Curd)",
+          "brand": "Amul",
+          "price": 28,
+          "unit": "400g",
+          "tags": ["dairy", "perishable"]
+        },
+        {
+          "id": "eggs",
+          "name": "Brown Eggs",
+          "brand": "Keggs",
+          "price": 84,
+          "unit": "12 pieces",
+          "tags": ["protein", "perishable"]
+        },
+        {
+          "id": "butter",
+          "name": "Amul Butter",
+          "brand": "Amul",
+          "price": 55,
+          "unit": "100g",
+          "tags": ["dairy", "perishable"]
+        },
+        {
+          "id": "cheese_slices",
+          "name": "Cheese Slices",
+          "brand": "Amul",
+          "price": 130,
+          "unit": "200g pack",
+          "tags": ["dairy", "perishable"]
+        }
+      ]
+    },
+    "vegetables": {
+      "name": "Fresh Vegetables",
+      "items": [
+        {
+          "id": "onion",
+          "name": "Onions",
+          "brand": "Fresh",
+          "price": 25,
+          "unit": "1kg",
+          "tags": ["vegetable", "perishable"]
+        },
+        {
+          "id": "tomato",
+          "name": "Tomatoes",
+          "brand": "Fresh",
+          "price": 45,
+          "unit": "1kg",
+          "tags": ["vegetable", "perishable"]
+        },
+        {
+          "id": "potato",
+          "name": "Potatoes (Aloo)",
+          "brand": "Fresh",
+          "price": 30,
+          "unit": "1kg",
+          "tags": ["vegetable", "perishable"]
+        },
+        {
+          "id": "coriander_leaves",
+          "name": "Fresh Coriander (Dhania)",
+          "brand": "Fresh",
+          "price": 10,
+          "unit": "100g bunch",
+          "tags": ["vegetable", "herb", "perishable"]
+        },
+        {
+          "id": "ginger",
+          "name": "Ginger (Adrak)",
+          "brand": "Fresh",
+          "price": 80,
+          "unit": "250g",
+          "tags": ["vegetable", "spice", "perishable"]
+        },
+        {
+          "id": "garlic",
+          "name": "Garlic (Lehsun)",
+          "brand": "Fresh",
+          "price": 75,
+          "unit": "250g",
+          "tags": ["vegetable", "spice", "perishable"]
+        },
+        {
+          "id": "green_chilli",
+          "name": "Green Chilli (Hari Mirch)",
+          "brand": "Fresh",
+          "price": 40,
+          "unit": "100g",
+          "tags": ["vegetable", "spice", "perishable"]
+        },
+        {
+          "id": "capsicum",
+          "name": "Capsicum (Bell Pepper)",
+          "brand": "Fresh",
+          "price": 60,
+          "unit": "500g",
+          "tags": ["vegetable", "perishable"]
+        },
+        {
+          "id": "carrot",
+          "name": "Carrots",
+          "brand": "Fresh",
+          "price": 40,
+          "unit": "500g",
+          "tags": ["vegetable", "perishable"]
+        },
+        {
+          "id": "beans",
+          "name": "Green Beans (Phali)",
+          "brand": "Fresh",
+          "price": 50,
+          "unit": "500g",
+          "tags": ["vegetable", "perishable"]
+        },
+        {
+          "id": "peas",
+          "name": "Green Peas (Matar)",
+          "brand": "Fresh",
+          "price": 65,
+          "unit": "500g",
+          "tags": ["vegetable", "perishable"]
+        },
+        {
+          "id": "curry_leaves",
+          "name": "Curry Leaves (Kadi Patta)",
+          "brand": "Fresh",
+          "price": 10,
+          "unit": "bunch",
+          "tags": ["vegetable", "herb", "perishable"]
+        },
+        {
+          "id": "lemon",
+          "name": "Lemon (Nimbu)",
+          "brand": "Fresh",
+          "price": 30,
+          "unit": "500g",
+          "tags": ["vegetable", "perishable"]
+        }
+      ]
+    },
+    "spices": {
+      "name": "Spices & Masalas",
+      "items": [
+        {
+          "id": "turmeric",
+          "name": "Turmeric Powder (Haldi)",
+          "brand": "MDH",
+          "price": 55,
+          "unit": "100g",
+          "tags": ["spice"]
+        },
+        {
+          "id": "chilli_powder",
+          "name": "Red Chilli Powder",
+          "brand": "Everest",
+          "price": 60,
+          "unit": "100g",
+          "tags": ["spice"]
+        },
+        {
+          "id": "garam_masala",
+          "name": "Garam Masala",
+          "brand": "MDH",
+          "price": 65,
+          "unit": "100g",
+          "tags": ["spice", "masala"]
+        },
+        {
+          "id": "cumin_seeds",
+          "name": "Cumin Seeds (Jeera)",
+          "brand": "Everest",
+          "price": 50,
+          "unit": "100g",
+          "tags": ["spice"]
+        },
+        {
+          "id": "coriander_powder",
+          "name": "Coriander Powder (Dhania)",
+          "brand": "MDH",
+          "price": 48,
+          "unit": "100g",
+          "tags": ["spice"]
+        },
+        {
+          "id": "salt",
+          "name": "Iodized Salt",
+          "brand": "Tata",
+          "price": 22,
+          "unit": "1kg",
+          "tags": ["spice", "staple"]
+        },
+        {
+          "id": "mustard_seeds",
+          "name": "Mustard Seeds (Rai)",
+          "brand": "Everest",
+          "price": 40,
+          "unit": "100g",
+          "tags": ["spice"]
+        },
+        {
+          "id": "pav_bhaji_masala",
+          "name": "Pav Bhaji Masala",
+          "brand": "Everest",
+          "price": 70,
+          "unit": "100g",
+          "tags": ["spice", "masala"]
+        },
+        {
+          "id": "black_pepper",
+          "name": "Black Pepper Powder",
+          "brand": "Everest",
+          "price": 85,
+          "unit": "50g",
+          "tags": ["spice"]
+        },
+        {
+          "id": "cardamom",
+          "name": "Cardamom (Elaichi)",
+          "brand": "Everest",
+          "price": 120,
+          "unit": "50g",
+          "tags": ["spice"]
+        },
+        {
+          "id": "chilli_flakes",
+          "name": "Chilli Flakes",
+          "brand": "Keya",
+          "price": 55,
+          "unit": "50g",
+          "tags": ["spice"]
+        },
+        {
+          "id": "oregano",
+          "name": "Oregano",
+          "brand": "Keya",
+          "price": 60,
+          "unit": "50g",
+          "tags": ["spice", "herb"]
+        }
+      ]
+    },
+    "oils": {
+      "name": "Cooking Oils & Ghee",
+      "items": [
+        {
+          "id": "mustard_oil",
+          "name": "Mustard Oil",
+          "brand": "Fortune",
+          "price": 185,
+          "unit": "1L",
+          "tags": ["oil"]
+        },
+        {
+          "id": "oil",
+          "name": "Sunflower Oil",
+          "brand": "Fortune",
+          "price": 165,
+          "unit": "1L",
+          "tags": ["oil"]
+        },
+        {
+          "id": "ghee",
+          "name": "Pure Cow Ghee",
+          "brand": "Amul",
+          "price": 540,
+          "unit": "500ml",
+          "tags": ["ghee", "dairy"]
+        }
+      ]
+    },
+    "snacks": {
+      "name": "Snacks & Beverages",
+      "items": [
+        {
+          "id": "biscuits",
+          "name": "Parle-G Biscuits",
+          "brand": "Parle",
+          "price": 25,
+          "unit": "200g",
+          "tags": ["snack"]
+        },
+        {
+          "id": "tea",
+          "name": "Premium Tea Leaves",
+          "brand": "Tata Tea Gold",
+          "price": 160,
+          "unit": "250g",
+          "tags": ["beverage"]
+        },
+        {
+          "id": "tea_powder",
+          "name": "Premium Tea Leaves",
+          "brand": "Tata Tea Gold",
+          "price": 160,
+          "unit": "250g",
+          "tags": ["beverage"]
+        },
+        {
+          "id": "namkeen",
+          "name": "Bhujia Sev",
+          "brand": "Haldiram's",
+          "price": 55,
+          "unit": "200g",
+          "tags": ["snack", "namkeen"]
+        },
+        {
+          "id": "sugar",
+          "name": "White Sugar",
+          "brand": "Madhur",
+          "price": 45,
+          "unit": "1kg",
+          "tags": ["staple", "sweet"]
+        },
+        {
+          "id": "bread",
+          "name": "Bread (White)",
+          "brand": "Britannia",
+          "price": 35,
+          "unit": "400g loaf",
+          "tags": ["snack", "breakfast"]
+        },
+        {
+          "id": "pav_bread",
+          "name": "Pav Bread",
+          "brand": "Britannia",
+          "price": 40,
+          "unit": "400g pack",
+          "tags": ["snack", "street-food"]
+        },
+        {
+          "id": "peanuts",
+          "name": "Raw Peanuts",
+          "brand": "Tulsi",
+          "price": 70,
+          "unit": "500g",
+          "tags": ["snack", "protein"]
+        },
+        {
+          "id": "sweet_corn",
+          "name": "Sweet Corn (Frozen)",
+          "brand": "McCain",
+          "price": 95,
+          "unit": "400g",
+          "tags": ["vegetable", "frozen"]
+        },
+        {
+          "id": "dosa_batter",
+          "name": "Fresh Dosa Batter",
+          "brand": "iD Fresh",
+          "price": 55,
+          "unit": "1L",
+          "tags": ["breakfast", "perishable"]
+        },
+        {
+          "id": "water",
+          "name": "Water",
+          "brand": "Essential",
+          "price": 0,
+          "unit": "N/A",
+          "tags": ["basic"]
+        }
+      ]
+    }
+  }
+}
